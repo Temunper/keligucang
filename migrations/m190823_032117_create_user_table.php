@@ -12,9 +12,9 @@ class m190823_032117_create_user_table extends Migration
      */
     public function safeUp()
     {
-        $this->createTable('{{%user}}', [
+        $this->createTable('user', [
             'id' => $this->primaryKey(),
-            'username'=>$this->string()->unique(),
+            'username'=>$this->string(100)->unique(),
             'auth_key'=>$this->string()->comment('相当于sessionid来获取用户'),
             'password_hash'=>$this->string()->comment('加密后的密码'),
             'created_at'=>$this->dateTime(),

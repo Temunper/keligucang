@@ -9,12 +9,20 @@ $config = [
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'qchW9GeflxIJ_YZJvyVOFw6dP1u8jj-k',
+        ],
+        //挑选皮肤
+        'assetManager' => [
+            'bundles' => [
+                'dmstr\web\AdminLteAsset' => [
+                    'skin' => 'skin-red',
+                ],
+            ],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -53,6 +61,12 @@ $config = [
         */
     ],
     'params' => $params,
+    'modules' => [
+        'backend' => [
+            'class' => 'app\modules\backend\Backend',
+            'layout' => '@app/modules/backend/views/layouts/main.php',
+        ]
+    ]
 ];
 
 if (YII_ENV_DEV) {
