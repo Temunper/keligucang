@@ -10,6 +10,14 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@mdm/admin' => '@vendor/mdmsoft/yii2-admin',
+    ],
+    //控制访问权限
+    'as access' => [
+        'class' => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            "/backend/site/*"
+        ]
     ],
     'components' => [
         'request' => [
@@ -23,6 +31,11 @@ $config = [
                     'skin' => 'skin-red',
                 ],
             ],
+        ],
+        //yii自带rbac管理组件
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -65,8 +78,13 @@ $config = [
         'backend' => [
             'class' => 'app\modules\backend\Backend',
             'layout' => '@app/modules/backend/views/layouts/main.php',
-        ]
-    ]
+        ],
+        //控制器模块
+        'admin' => [
+            'class' => 'mdm\admin\Module',
+            'layout' => '@app/modules/backend/views/layouts/main.php',
+        ],
+    ],
 ];
 
 if (YII_ENV_DEV) {
