@@ -16,7 +16,8 @@ $config = [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            "/backend/site/*"
+            "*",
+//            "/frontend/*"
         ]
     ],
     'components' => [
@@ -43,6 +44,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+//            'loginUrl' => '/backend/site/login'
         ],
         'errorHandler' => [
             'errorAction' => '/backend/site/error',
@@ -64,20 +66,29 @@ $config = [
             ],
         ],
         'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
-        ],
-        */
+//        'urlManager' => [
+//            'enablePrettyUrl' => false,
+//            'showScriptName' => true,
+//            'enableStrictParsing' => false,
+//            'suffix' => '.html',
+//            'rules' => [
+//                'backend'=>'index.php/backend/news/index',
+//                '<modules:\w+>/<controller:\w+>/<action:\w+>'=>'<modules>/<controller>/<action>',
+//                '<modules:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<modules>/<controller>/<action>',
+//                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
+//                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+//                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+//            ],
+//        ],
     ],
     'params' => $params,
     'modules' => [
         'backend' => [
             'class' => 'app\modules\backend\Backend',
             'layout' => '@app/modules/backend/views/layouts/main.php',
+        ],
+        'frontend' => [
+            'class' => 'app\modules\frontend\Frontend',
         ],
         //控制器模块
         'admin' => [
@@ -96,7 +107,7 @@ $config = [
     'timeZone' => 'Asia/Shanghai',
 ];
 
-if (YII_ENV_DEV) {
+if (false) {
     // configuration adjustments for 'dev' environment
 //    $config['bootstrap'][] = 'debug';
 //    $config['modules']['debug'] = [

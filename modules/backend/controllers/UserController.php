@@ -24,7 +24,6 @@ class UserController extends Controller
     public function behaviors()
     {
         return [
-
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
