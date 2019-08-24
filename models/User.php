@@ -14,8 +14,6 @@ use yii\web\IdentityInterface;
  * @property integer $id
  * @property string $username
  * @property string $password_hash
- * // * @property string $password_reset_token
- * // @property string $email
  * @property string $auth_key
  * @property integer $status
  * @property integer $created_at
@@ -42,7 +40,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function behaviors()
     {
         return [
-            TimestampBehavior::className(),
+//            TimestampBehavior::className(),
         ];
     }
 
@@ -81,7 +79,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username]);
+        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
     }
 
     /**
@@ -186,5 +184,13 @@ class User extends ActiveRecord implements IdentityInterface
 //    {
 //        $this->password_reset_token = null;
 //    }
-
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => '用户名',
+            'updated_at' => '更新时间',
+            'created_at' => '创建时间',
+        ];
+    }
 }

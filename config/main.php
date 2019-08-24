@@ -28,7 +28,7 @@ $config =  [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            "site/*"
+            "backend/site/*"
 
         ],
     ],
@@ -66,7 +66,7 @@ $config =  [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => '/backend/site/error',
         ],
 
         /*

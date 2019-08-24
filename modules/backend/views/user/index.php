@@ -11,8 +11,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a('添加新用户', ['signup'], ['class' => 'btn btn-success']) ?>
     </p>
@@ -23,13 +21,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+//            'id',
             'username',
-            'auth_key',
-            'password_hash',
+//            'auth_key',
+//            'password_hash',
             'created_at',
-            //'updated_at',
-
+            'updated_at',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

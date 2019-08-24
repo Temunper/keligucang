@@ -11,6 +11,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Request;
 
 /**
  * UserBackendController implements the CRUD actions for UserBackend model.
@@ -55,8 +56,9 @@ class UserController extends Controller
      */
     public function actionView($id)
     {
+        $model = $this->findModel($id);
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
@@ -65,17 +67,17 @@ class UserController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
-    {
-        $model = new User();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
+//    public function actionCreate()
+//    {
+//        $model = new User();
+//        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+//            return $this->redirect(['view', 'id' => $model->id]);
+//        }
+//
+//        return $this->render('create', [
+//            'model' => $model,
+//        ]);
+//    }
 
     /**
      * Updates an existing UserBackend model.
@@ -84,14 +86,19 @@ class UserController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate()
     {
-        $model = $this->findModel($id);
+        Yii::$app->request->isPost === true ? $id = Yii::$app->request->post('SignupForm')['id'] : $id = Yii::$app->request->get('id');
+        $user = $this->findModel($id);
+        $model = new SignupForm();
+        $model->scenario = 'update';
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->change_password()) {
+            return $this->redirect(['/backend/user/view', 'id' => $model->id]);
         }
 
+        $model->id = $user->id;
+        $model->username = $user->username;
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -106,11 +113,11 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $model = $this->findModel($id);
+        $model->status = User::STATUS_DELETED;
+        $model->save();
         return $this->redirect(['index']);
     }
-
 
 
     protected function findModel($id)
@@ -125,11 +132,30 @@ class UserController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $model->scenario = 'signup';
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
             return $this->redirect(['index']);
         }
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+
+    public function actionValidateForm()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $model = new SignupForm();
+        $model->scenario = 'update';
+        $model->load(Yii::$app->request->post());
+        return \yii\widgets\ActiveForm::validate($model);
+    }
+
+    public function actionValidateSignup()
+    {
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $model = new SignupForm();
+        $model->scenario = 'signup';
+        $model->load(Yii::$app->request->post());
+        return \yii\widgets\ActiveForm::validate($model);
     }
 }
