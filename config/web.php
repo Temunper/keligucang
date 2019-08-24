@@ -84,9 +84,16 @@ $config = [
             'class' => 'mdm\admin\Module',
             'layout' => '@app/modules/backend/views/layouts/main.php',
         ],
+        //富文本框模块
+        'redactor' => [
+            'class' => 'app\components\RedactorModule',
+            'uploadDir' => 'uploads',
+            'uploadUrl' => 'uploads',
+            'imageAllowExtensions' => ['jpg', 'png', 'gif']
+        ],
     ],
-    'language'=>'zh-CN',
-    'timeZone'=>'Asia/Shanghai',
+    'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
 ];
 
 if (YII_ENV_DEV) {
@@ -94,8 +101,8 @@ if (YII_ENV_DEV) {
 //    $config['bootstrap'][] = 'debug';
 //    $config['modules']['debug'] = [
 //        'class' => 'yii\debug\Module',
-        // uncomment the following to add your IP if you are not connecting from localhost.
-        //'allowedIPs' => ['127.0.0.1', '::1'],
+    // uncomment the following to add your IP if you are not connecting from localhost.
+    //'allowedIPs' => ['127.0.0.1', '::1'],
 //    ];
 
     $config['bootstrap'][] = 'gii';

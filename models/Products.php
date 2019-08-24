@@ -39,6 +39,7 @@ class Products extends \yii\db\ActiveRecord
             [['name', 'name_En'], 'string', 'max' => 100],
             [['advantage_1', 'advantage_2', 'advantage_3'], 'string', 'max' => 50],
             [['description_1', 'description_2', 'description_3', 'image'], 'string', 'max' => 255],
+            [['description_1', 'description_2', 'description_3', 'image', 'name', 'name_En'], 'required']
         ];
     }
 
@@ -49,16 +50,16 @@ class Products extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'name_En' => 'Name En',
-            'advantage_1' => 'Advantage 1',
-            'advantage_2' => 'Advantage 2',
-            'advantage_3' => 'Advantage 3',
-            'description_1' => 'Description 1',
-            'description_2' => 'Description 2',
-            'description_3' => 'Description 3',
-            'image' => 'Image',
-            'status' => 'Status',
+            'name' => '产品名',
+            'name_En' => '英文名',
+            'advantage_1' => '优势1',
+            'advantage_2' => '优势2',
+            'advantage_3' => '优势3',
+            'description_1' => '描述1',
+            'description_2' => '描述2',
+            'description_3' => '描述3',
+            'image' => '图片',
+            'status' => '状态',
         ];
     }
 }

@@ -2,12 +2,14 @@
 
 namespace app\modules\backend\controllers;
 
+use app\components\Upload;
 use Yii;
 use app\models\News;
 use app\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * NewsController implements the CRUD actions for News model.
@@ -65,11 +67,14 @@ class NewsController extends Controller
     public function actionCreate()
     {
         $model = new News();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $model->scenario = 'create';
+        if ($model->load(Yii::$app->request->post())) {
+            $model->created_time = date('Y-m-d h:i:s');
+            $model->updated_time = date('Y-m-d h:i:s');
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -85,11 +90,13 @@ class NewsController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $model->scenario = 'update';
+        if ($model->load(Yii::$app->request->post())) {
+            $model->updated_time = date('Y-m-d h:i:s');
+            if ($model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
-
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -104,8 +111,9 @@ class NewsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $new = News::find()->where(['id' => $id])->one();
+        $new->status = News::STATUS_DELETED;
+        $new->save();
         return $this->redirect(['index']);
     }
 
@@ -123,5 +131,34 @@ class NewsController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+//图片上传
+    public function actionUpload()
+    {
+        try {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            $model = new Upload();
+            $info = $model->upImage();
+
+            if ($info && is_array($info)) {
+                return $info;
+            } else {
+                return ['code' => 1, 'msg' => 'error'];
+            }
+
+        } catch (\Exception $e) {
+            return ['code' => 1, 'msg' => $e->getMessage()];
+        }
+    }
+
+//    使用或停用新闻
+    public function actionUsing()
+    {
+        $new = News::find()->where(['id' => Yii::$app->request->get('id')])->one();
+        $new->status = Yii::$app->request->get('status');
+        $new->save();
+        return $this->redirect(['index']);
     }
 }

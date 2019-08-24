@@ -1,6 +1,8 @@
 <?php
 
+use app\models\News;
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -14,11 +16,19 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'image')->widget('manks\FileInput', []);
+    ?>
 
     <?= $form->field($model, 'brief')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
+        'clientOptions' => [
+//            'imageManagerJson' => ['/redactor/upload/image-json'],
+//            'imageUpload' => ['/redactor/upload/image'],
+//            'fileUpload' => ['/redactor/upload/file'],
+            'lang' => 'zh_cn',
+            'plugins' => ['clips', 'fontcolor', 'imagemanager']]
+    ]) ?>
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
 
@@ -28,15 +38,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'created_time')->textInput() ?>
-
-    <?= $form->field($model, 'updated_time')->textInput() ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
+    <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
     <?php ActiveForm::end(); ?>
 
