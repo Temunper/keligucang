@@ -6,6 +6,7 @@ use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
 use yii\web\Controller;
+use yii\web\JqueryAsset;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -89,7 +90,6 @@ class ProductsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
-
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -104,8 +104,9 @@ class ProductsController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
+        $new = Products::find()->where(['id' => $id])->one();
+        $new->status = Products::STATUS_DELETED;
+        $new->save();
         return $this->redirect(['index']);
     }
 

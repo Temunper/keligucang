@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace yii\captcha;
+namespace app\components\captcha;
 
 use Yii;
 use yii\base\Action;
@@ -139,7 +139,7 @@ class CaptchaAction extends Action
         $this->setHttpHeaders();
         Yii::$app->response->format = Response::FORMAT_RAW;
 
-        return $this->renderImage($this->getVerifyCode(true));
+        return $this->renderImage($this->getVerifyCode());
     }
 
     /**

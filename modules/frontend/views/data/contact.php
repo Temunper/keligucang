@@ -32,10 +32,10 @@ use yii\helpers\Url;
             </div>
             <div class="header-r fr">
                 <ul>
-                    <li class="nowaday">
+                    <li>
                         <a href="<?= Url::toRoute('index')?>">首页</a>
                     </li>
-                    <li>
+                    <li class="nowaday">
                         <a href="<?= Url::toRoute('company')?>">企业介绍</a>
                     </li>
                     <li>

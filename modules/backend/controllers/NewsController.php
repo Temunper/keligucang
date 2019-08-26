@@ -7,6 +7,7 @@ use Yii;
 use app\models\News;
 use app\models\NewsSearch;
 use yii\web\Controller;
+use yii\web\JqueryAsset;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\Response;
@@ -93,6 +94,9 @@ class NewsController extends Controller
         $model = $this->findModel($id);
         $model->scenario = 'update';
         if ($model->load(Yii::$app->request->post())) {
+//            var_dump(Yii::$app->request->post());die;
+//            $model->year;die;
+            $model->year = Yii::$app->request->post('year');
             $model->updated_time = date('Y-m-d h:i:s');
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);

@@ -18,6 +18,7 @@ use Yii;
  * @property string $description 描述
  * @property string $created_time
  * @property string $updated_time
+ * @property int $year
  * @property int $status
  */
 class News extends \yii\db\ActiveRecord
@@ -41,9 +42,9 @@ class News extends \yii\db\ActiveRecord
     {
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_CREATE] = ['title', 'image', 'status', 'created_time',
-            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description'];
+            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description','year'];
         $scenarios[self::SCENARIO_UPDATE] = ['title', 'image', 'status', 'created_time',
-            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description'];
+            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description','year'];
         return $scenarios;
     }
 
@@ -85,6 +86,7 @@ class News extends \yii\db\ActiveRecord
             'source' => '来源',
             'keywords' => '关键词',
             'description' => '描述',
+            'year'=>'年份',
             'created_time' => '创建时间',
             'updated_time' => '更新时间',
             'status' => 'Status',

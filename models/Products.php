@@ -21,6 +21,9 @@ use Yii;
  */
 class Products extends \yii\db\ActiveRecord
 {
+    const STATUS_DELETED = 0;
+    const STATUS_ACTIVE = 10;
+
     /**
      * {@inheritdoc}
      */
@@ -36,10 +39,17 @@ class Products extends \yii\db\ActiveRecord
     {
         return [
             [['status'], 'integer'],
+            ['year', 'integer', 'max' => 4],
+
+            ['status', 'default', 'value' => self::STATUS_ACTIVE],
+            ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+
             [['name', 'name_En'], 'string', 'max' => 100],
             [['advantage_1', 'advantage_2', 'advantage_3'], 'string', 'max' => 50],
             [['description_1', 'description_2', 'description_3', 'image'], 'string', 'max' => 255],
-            [['description_1', 'description_2', 'description_3', 'image', 'name', 'name_En'], 'required']
+            [['description_1', 'description_2', 'description_3', 'image', 'name', 'name_En', 'year'], 'required']
+
+
         ];
     }
 
@@ -59,6 +69,7 @@ class Products extends \yii\db\ActiveRecord
             'description_2' => '描述2',
             'description_3' => '描述3',
             'image' => '图片',
+            'year' => '年份',
             'status' => '状态',
         ];
     }

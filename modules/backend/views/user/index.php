@@ -9,6 +9,7 @@ use yii\grid\GridView;
 $this->title = 'Users';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="user-index">
 
     <p>

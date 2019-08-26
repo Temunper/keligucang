@@ -25,6 +25,7 @@ $this->registerJs("var _opts = {$opts};");
 $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="auth-item-view">
     <h1><?=Html::encode($this->title);?></h1>
     <p>

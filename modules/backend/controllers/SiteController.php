@@ -2,6 +2,7 @@
 
 namespace app\modules\backend\controllers;
 
+use app\assets\AppAsset;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -43,6 +44,8 @@ class SiteController extends Controller
      */
     public function actions()
     {
+//        AppAsset::register($this);
+        $this->layout = false;
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
@@ -53,6 +56,8 @@ class SiteController extends Controller
             ],
         ];
     }
+
+
 
     /**
      * Displays homepage.
@@ -77,7 +82,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect('/backend/news/index');
         }
         $model->password = '';
         return $this->render('@app/modules/backend/views/site/login', [

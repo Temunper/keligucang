@@ -21,7 +21,6 @@ $fieldOptions2 = [
 ];
 ?>
 <?=Html::jsFile('/js/jquery.js')?>
-
 <div class="login-box">
     <div class="login-logo">
         <a href="#"><b>颗粒归仓</a>
@@ -30,7 +29,10 @@ $fieldOptions2 = [
     <div class="login-box-body">
         <p class="login-box-msg">输入账户和密码</p>
 
-        <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
+        <?php $form = ActiveForm::begin(['id' => 'login-form',
+            'enableClientValidation' => false,
+            'method'=>'post',
+        ]); ?>
 
         <?= $form
             ->field($model, 'username', $fieldOptions1)
@@ -43,7 +45,8 @@ $fieldOptions2 = [
             ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 
         <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-            'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+            'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6" style="margin-left: 114px;
+    margin-top: -42px;">{input}</div></div>',
         ]) ?>
 
         <div class="row">

@@ -16,8 +16,9 @@ $config = [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            "*",
-//            "/frontend/*"
+            "backend/site/login",
+            "site/*",
+            "frontend/*"
         ]
     ],
     'components' => [
@@ -48,6 +49,7 @@ $config = [
         ],
         'errorHandler' => [
             'errorAction' => '/backend/site/error',
+//            'layout'=>false
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -66,20 +68,28 @@ $config = [
             ],
         ],
         'db' => $db,
-//        'urlManager' => [
-//            'enablePrettyUrl' => false,
-//            'showScriptName' => true,
-//            'enableStrictParsing' => false,
-//            'suffix' => '.html',
-//            'rules' => [
-//                'backend'=>'index.php/backend/news/index',
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'suffix' => '',
+            'rules' => [
+
+                '/' => '/frontend/data/index',
+                '/backend' => 'backend/news/index',
+                '/newscontent/<id:\d+>'=>'/frontend/data/newscontent',
+                '/<action:\w+>' => '/frontend/data/<action>',
+
+                '/backend/<controller:\w+>/<action:\w+>' => '/backend/<controller>/<action>',
+
+
 //                '<modules:\w+>/<controller:\w+>/<action:\w+>'=>'<modules>/<controller>/<action>',
 //                '<modules:\w+>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<modules>/<controller>/<action>',
 //                '<controller:\w+>/<id:\d+>'=>'<controller>/view',
 //                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 //                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-//            ],
-//        ],
+            ],
+        ],
     ],
     'params' => $params,
     'modules' => [
@@ -99,7 +109,7 @@ $config = [
         'redactor' => [
             'class' => 'app\components\RedactorModule',
             'uploadDir' => 'uploads',
-            'uploadUrl' => 'uploads',
+            'uploadUrl' => '/uploads',
             'imageAllowExtensions' => ['jpg', 'png', 'gif']
         ],
     ],

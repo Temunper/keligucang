@@ -13,6 +13,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('rbac-admin', $labels['Items
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->name]];
 $this->params['breadcrumbs'][] = Yii::t('rbac-admin', 'Update');
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="auth-item-update">
     <h1><?= Html::encode($this->title) ?></h1>
     <?=

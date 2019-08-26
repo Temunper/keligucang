@@ -10,6 +10,7 @@ use yii\helpers\Html;
 list(,$url) = Yii::$app->assetManager->publish('@mdm/admin/assets');
 $this->registerCssFile($url.'/main.css');
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="en">

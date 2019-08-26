@@ -32,7 +32,7 @@ use yii\helpers\Url;
             </div>
             <div class="header-r fr">
                 <ul>
-                    <li class="nowaday">
+                    <li>
                         <a href="<?= Url::toRoute('index')?>">首页</a>
                     </li>
                     <li>
@@ -44,7 +44,7 @@ use yii\helpers\Url;
                     <li>
                         <a href="<?= Url::toRoute('tyg')?>">美容洗护体验馆</a>
                     </li>
-                    <li>
+                    <li  class="nowaday">
                         <a href="<?= Url::toRoute('join')?>">招商加盟</a>
                     </li>
                     <li>

@@ -12,6 +12,7 @@ use yii\helpers\Url;
 $this->title = 'News';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="news-index">
 
     <p>
@@ -33,11 +34,12 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'content:ntext',
             'author',
             'source',
+            'year',
             //'keywords',
             //'description',
             //'created_time',
             //'updated_time',
-            //'status',
+//            'status',
 
             ['class' => 'yii\grid\ActionColumn',
                 'template' => '{using}',
@@ -45,16 +47,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'using' => function ($url, $model, $key) {
                         if ($model->status == 10) {
-                            return Html::a('开启使用', Url::toRoute(['news/using','id'=>$model->id,'status'=>5]), [
+                            return Html::a('开启使用', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
                                 'title' => '栏目信息',
                                 'class' => 'btn-view',
-                                'method'=>'get'
+                                'method' => 'get'
                             ]);
                         } else {
-                            return Html::a('停止使用', Url::toRoute(['news/using','id'=>$model->id,'status'=>10]), [
+                            return Html::a('停止使用', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
                                 'title' => '栏目信息',
                                 'class' => 'btn-view',
-                                'method'=>'get'
+                                'method' => 'get'
                             ]);
                         }
                     },

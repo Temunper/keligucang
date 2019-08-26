@@ -30,6 +30,7 @@ $this->registerJs("var _opts = {$opts};");
 $this->registerJs($this->render('_script.js'));
 $animateIcon = ' <i class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></i>';
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="assignment-index">
     <h1><?=$this->title;?></h1>
 

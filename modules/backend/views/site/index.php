@@ -4,6 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="site-index">
 
     <div class="jumbotron">
