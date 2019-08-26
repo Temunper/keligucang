@@ -25,6 +25,6 @@ return [
             ],
         ],
     ],
-    'imageUploadRelativePath' => 'image/news/', // 图片默认上传的目录
-    'imageUploadSuccessPath' => 'image/news/', // 图片上传成功后，路径前缀
+    'imageUploadRelativePath' => 'image/', // 图片默认上传的目录
+    'imageUploadSuccessPath' => 'image/', // 图片上传成功后，路径前缀
 ];

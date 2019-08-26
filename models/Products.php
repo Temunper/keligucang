@@ -17,6 +17,7 @@ use Yii;
  * @property string $description_2 描述2
  * @property string $description_3 描述3
  * @property string $image 图片
+ * @property string $dt_image 大图片
  * @property int $status
  */
 class Products extends \yii\db\ActiveRecord
@@ -39,16 +40,14 @@ class Products extends \yii\db\ActiveRecord
     {
         return [
             [['status'], 'integer'],
-            ['year', 'integer', 'max' => 4],
 
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
 
             [['name', 'name_En'], 'string', 'max' => 100],
             [['advantage_1', 'advantage_2', 'advantage_3'], 'string', 'max' => 50],
-            [['description_1', 'description_2', 'description_3', 'image'], 'string', 'max' => 255],
-            [['description_1', 'description_2', 'description_3', 'image', 'name', 'name_En', 'year'], 'required']
-
+            [['description_1', 'description_2', 'description_3', 'image','dt_image'], 'string', 'max' => 255],
+            [['description_1', 'description_2', 'description_3', 'image','dt_image', 'name', 'name_En'], 'required']
 
         ];
     }
@@ -69,7 +68,7 @@ class Products extends \yii\db\ActiveRecord
             'description_2' => '描述2',
             'description_3' => '描述3',
             'image' => '图片',
-            'year' => '年份',
+            'dt_image'=>'大图片',
             'status' => '状态',
         ];
     }

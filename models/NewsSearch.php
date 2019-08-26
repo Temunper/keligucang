@@ -71,7 +71,9 @@ class NewsSearch extends News
             ->andFilterWhere(['like', 'author', $this->author])
             ->andFilterWhere(['like', 'source', $this->source])
             ->andFilterWhere(['like', 'keywords', $this->keywords])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+            ->andFilterWhere(['<>', 'status', News::STATUS_DELETED]);
+
 
         return $dataProvider;
     }

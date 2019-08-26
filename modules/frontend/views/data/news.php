@@ -92,7 +92,6 @@ use yii\helpers\Url;
                 <ul>
                     <?php $i = 1 ?>
                     <?php foreach ($model_2019
-
                                    as $item) { ?>
                         <?php if ($i % 2 == 0) { ?>
                             <li class="news-list2">
@@ -102,7 +101,7 @@ use yii\helpers\Url;
                         <img src="<?= $item->image ?>"/>
                         <a href="<?= Url::toRoute(['newscontent', 'id' => $item->id]) ?>">
                             <h2><?= $item->title ?></h2>
-                            <span>29July 2019</span>
+                            <span><?= date('j F Y',strtotime($item->year))?></span>
                             <i></i>
                             <p><?= $item->brief ?></p>
                             <h3>查看详情</br>MORE</h3>
@@ -144,7 +143,7 @@ use yii\helpers\Url;
                         <img src="<?= $item->image ?>"/>
                         <a href="<?= Url::toRoute(['newscontent', 'id' => $item->id]) ?>">
                             <h2><?= $item->title ?></h2>
-                            <span>29July 2019</span>
+                            <span><?= date('j F Y',strtotime($item->year))?></span>
                             <i></i>
                             <p><?= $item->brief ?></p>
                             <h3>查看详情</br>MORE</h3>
@@ -183,7 +182,7 @@ use yii\helpers\Url;
                         <img src="<?= $item->image ?>"/>
                         <a href="<?= Url::toRoute(['newscontent', 'id' => $item->id]) ?>">
                             <h2><?= $item->title ?></h2>
-                            <span>29July 2019</span>
+                            <span><?= date('j F Y',strtotime($item->year))?></span>
                             <i></i>
                             <p><?= $item->brief ?></p>
                             <h3>查看详情</br>MORE</h3>
@@ -222,7 +221,7 @@ use yii\helpers\Url;
                         <img src="<?= $item->image ?>"/>
                         <a href="<?= Url::toRoute(['newscontent', 'id' => $item->id]) ?>">
                             <h2><?= $item->title ?></h2>
-                            <span>29July 2019</span>
+                            <span><?= date('j F Y',strtotime($item->year))?></span>
                             <i></i>
                             <p><?= $item->brief ?></p>
                             <h3>查看详情</br>MORE</h3>

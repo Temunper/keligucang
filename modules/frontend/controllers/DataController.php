@@ -60,32 +60,33 @@ class DataController extends Controller
     public function actionNews()
     {
         //2016
-        $news_2016 = News::find()->where(['status' => News::STATUS_USING, 'year' => 2016]);
+        $news_2016 = News::find()->where(['status' => News::STATUS_USING])->andWhere(['=','str_to_date(year,\'%Y\')',2016]);
         $count = $news_2016->count();
         $pages_2016 = new Pagination(['totalCount' => $count]);
         $pages_2016->setPageSize(4);
         $model_2016 = $news_2016->offset($pages_2016->offset)->limit($pages_2016->limit)->all();
 
         //2017
-        $news_2017 = News::find()->where(['status' => News::STATUS_USING, 'year' => 2017]);
+        $news_2017 = News::find()->where(['status' => News::STATUS_USING])->andWhere(['=','str_to_date(year,\'%Y\')',2017]);
         $count = $news_2017->count();
         $pages_2017 = new Pagination(['totalCount' => $count]);
         $pages_2017->setPageSize(4);
         $model_2017 = $news_2017->offset($pages_2017->offset)->limit($pages_2017->limit)->all();
 
         //2018
-        $news_2018 = News::find()->where(['status' => News::STATUS_USING, 'year' => 2018]);
+        $news_2018 = News::find()->where(['status' => News::STATUS_USING])->andWhere(['=','str_to_date(year,\'%Y\')',2018]);
         $count = $news_2018->count();
         $pages_2018 = new Pagination(['totalCount' => $count]);
         $pages_2018->setPageSize(4);
         $model_2018 = $news_2018->offset($pages_2018->offset)->limit($pages_2018->limit)->all();
 
         //2019
-        $news_2019 = News::find()->where(['status' => News::STATUS_USING, 'year' => 2019]);
+        $news_2019 = News::find()->where(['status' => News::STATUS_USING])->andWhere(['=','str_to_date(year,\'%Y\')',2019]);
         $count = $news_2019->count();
         $pages_2019 = new Pagination(['totalCount' => $count]);
         $pages_2019->setPageSize(4);
         $model_2019 = $news_2019->offset($pages_2019->offset)->limit($pages_2019->limit)->all();
+
 
         $this->layout = false;
         return $this->render('news', [
@@ -115,7 +116,7 @@ class DataController extends Controller
 //        var_dump(\Yii::$app->request->get('id'));die;
         $model = News::findOne(['id' => Yii::$app->request->get('id'), 'status' => News::STATUS_USING]);
         $this->layout = false;
-        return $this->render('news01', ['model' => $model]);
+        return $this->render('news01', ['model' => $model, 'msg' => '']);
     }
 
 //    上下篇文章
@@ -126,7 +127,7 @@ class DataController extends Controller
         $model = News::find()
             ->where(['year' => $news->year
                 , 'status' => News::STATUS_USING])
-            ->andWhere([$option,'id', Yii::$app->request->get('id')])
+            ->andWhere([$option, 'id', Yii::$app->request->get('id')])
             ->one();
         if ($model) {
             return $this->render('news01', ['model' => $model, 'msg' => '']);

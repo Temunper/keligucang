@@ -28,8 +28,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description_3')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'image')->widget('manks\FileInput', []);
+    ?>
+    <?= $form->field($model, 'dt_image')->widget('manks\FileInput', []);
+    ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

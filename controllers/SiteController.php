@@ -46,16 +46,6 @@ class SiteController extends Controller
     {
         return [
             //默认验证码刷新页面不会自动刷新
-//            'captcha' => [
-//                'class' => 'app\components\captcha',
-//                'testLimit' => 1,
-//                'maxLength' => 6,
-//                'minLength' => 6,
-//                'padding' => 1,
-//                'height' => 50,
-//                'width' => 140,
-//                'offset' => 1,
-//            ],
             'error' => [
                 'class' => 'yii\web\ErrorAction',
             ],

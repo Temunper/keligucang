@@ -7,7 +7,9 @@ use yii\helpers\Url;
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>颗粒归仓</title>
+    <title><?= $model->title ?></title>
+    <meta name="keywords" content="<?= $model->keywords ?>">
+    <meta name="description" content="<?= $model->description ?>">
     <link rel="stylesheet" type="text/css" href="../css/base.css"/>
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/index.css"/>
@@ -131,7 +133,7 @@ use yii\helpers\Url;
 <script>
     $(function () {
         var msg = "<?= $msg?>";
-        if (msg != null) {
+        if (msg != '') {
             alert(msg);
         }
     })

@@ -92,7 +92,7 @@ use yii\helpers\Url;
         <div class="cpjs-listcont">
             <?php } ?>
             <div class="cpjs-listcont-c">
-                <img src="<?= $value->image ?>" alt="<?= $value->name ?>"/>
+                <img src="<?= $value->dt_image ?>" alt="<?= $value->name ?>"/>
                 <div>
                     <p><?= $value->name ?></p>
                     <h2><?= $value->name_En ?></h2>

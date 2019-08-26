@@ -23,14 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'brief')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
-        'clientOptions' => [
-//            'imageManagerJson' => ['/redactor/upload/image-json'],
-//            'imageUpload' => ['/redactor/upload/image'],
-//            'fileUpload' => ['/redactor/upload/file'],
-            'lang' => 'zh_cn',
-            'plugins' => ['clips', 'fontcolor', 'imagemanager']]
-    ]) ?>
+
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
 
@@ -39,6 +32,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
+        'clientOptions' => [
+            'minHeight' => '300px',
+            'lang' => 'zh_cn',
+            'plugins' => ['clips', 'counter', 'definedlinks', 'filemanager', 'fontcolor', 'fontfamily', 'fontsize', 'fullscreen', 'imagemanager', 'limiter', 'table', 'textdirection', 'textexpander',]
+        ]
+    ]) ?>
 
     <div class="form-group">
         <label for="ECalendar_date1" style="width: 100%">选择时间</label>
@@ -51,6 +52,7 @@ use yii\widgets\ActiveForm;
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
+
 
     <?php ActiveForm::end(); ?>
 

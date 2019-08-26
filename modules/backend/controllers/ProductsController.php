@@ -2,6 +2,7 @@
 
 namespace app\modules\backend\controllers;
 
+use app\components\Upload;
 use Yii;
 use app\models\Products;
 use app\models\ProductsSearch;
@@ -9,6 +10,7 @@ use yii\web\Controller;
 use yii\web\JqueryAsset;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\Response;
 
 /**
  * ProductsController implements the CRUD actions for Products model.
@@ -124,5 +126,24 @@ class ProductsController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionUpload()
+    {
+        try {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+
+            $model = new Upload();
+            $info = $model->upImage();
+
+            if ($info && is_array($info)) {
+                return $info;
+            } else {
+                return ['code' => 1, 'msg' => 'error'];
+            }
+
+        } catch (\Exception $e) {
+            return ['code' => 1, 'msg' => $e->getMessage()];
+        }
     }
 }

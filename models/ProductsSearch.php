@@ -70,7 +70,8 @@ class ProductsSearch extends Products
             ->andFilterWhere(['like', 'description_1', $this->description_1])
             ->andFilterWhere(['like', 'description_2', $this->description_2])
             ->andFilterWhere(['like', 'description_3', $this->description_3])
-            ->andFilterWhere(['like', 'image', $this->image]);
+            ->andFilterWhere(['like', 'image', $this->image])
+            ->andFilterWhere(['<>', 'status', Products::STATUS_DELETED]);
 
         return $dataProvider;
     }
