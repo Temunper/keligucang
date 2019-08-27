@@ -108,8 +108,8 @@ $config = [
         //富文本框模块
         'redactor' => [
             'class' => 'app\components\RedactorModule',
-            'uploadDir' => 'uploads',
-            'uploadUrl' => '/uploads',
+            'uploadDir' => 'web/uploads',
+            'uploadUrl' => '/web/uploads',
             'imageAllowExtensions' => ['jpg', 'png', 'gif']
         ],
     ],

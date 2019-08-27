@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<?= Html::jsFile('/js/jquery.js') ?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="news-view">
 
 
@@ -48,7 +48,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ]
         ],
-
     ]) ?>
 
 </div>

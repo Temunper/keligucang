@@ -9,10 +9,10 @@ $this->title = '创建News';
 $this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/js/jquery-1.11.3.min.js')?>
-<?=Html::jsFile('/js/Ecalendar.jquery.min.js')?>
-<?=Html::jsFile('/js/iconfont.js')?>
-<?=Html::cssFile('/css/Ecalendar.css')?>
+<?=Html::jsFile('/web/js/jquery-1.11.3.min.js')?>
+<?=Html::jsFile('/web/js/Ecalendar.jquery.min.js')?>
+<?=Html::jsFile('/web/js/iconfont.js')?>
+<?=Html::cssFile('/web/css/Ecalendar.css')?>
 <div class="news-create">
 
 
