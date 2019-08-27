@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="products-view">
 
     <p>

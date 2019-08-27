@@ -25,7 +25,7 @@ $columns[] = [
     'template' => '{view}'
 ];
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="assignment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

@@ -7,13 +7,13 @@ use yii\helpers\Url; ?>
 	<head>
 		<meta charset="UTF-8" />
 		<title>颗粒归仓</title>
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" href="css/animate.css" />
-		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="js/swiper.min.js"></script>
-		<script type="text/javascript" src="js/wow.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/web/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="/web/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="/web/css/index.css" />
+		<link rel="stylesheet" href="/web/css/animate.css" />
+		<script type="text/javascript" src="/web/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/web/js/swiper.min.js"></script>
+		<script type="text/javascript" src="/web/js/wow.min.js"></script>
 		<script>
 			if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
 				new WOW().init();
@@ -27,7 +27,7 @@ use yii\helpers\Url; ?>
     <header>
         <div class="header wrap clearfix">
             <div class="header-l fl">
-                <img src="image/logo.png" height="49" width="205" alt="" />
+                <img src="/web/image/logo.png" height="49" width="205" alt="" />
             </div>
             <div class="header-r fr">
                 <ul>
@@ -63,9 +63,9 @@ use yii\helpers\Url; ?>
 	<div class="index-banner">
 		<div class="swiper-container swiper-list1">
 			<div class="swiper-wrapper">
-				<div class="swiper-slide"><img src="image/index-banner-01.jpg" alt="" /></div>
-				<div class="swiper-slide"><img src="image/index-banner-02.jpg" alt="" /></div>
-				<div class="swiper-slide"><img src="image/index-banner-03.jpg" alt="" /></div>
+				<div class="swiper-slide"><img src="/web/image/index-banner-01.jpg" alt="" /></div>
+				<div class="swiper-slide"><img src="/web/image/index-banner-02.jpg" alt="" /></div>
+				<div class="swiper-slide"><img src="/web/image/index-banner-03.jpg" alt="" /></div>
 			</div>
 			<div class="swiper-pagination swiper-p1"></div>
 		</div>
@@ -75,39 +75,39 @@ use yii\helpers\Url; ?>
 	<!--产品轮播1开始-->
 	<div class="index-list">
 		<div class="bx wow fadeInUp animated">
-			<img src="image/index-title01.png" />
+			<img src="/web/image/index-title01.png" />
 		</div>
 		<div class="index-seiper2">
 			<div class="swiper-container swiper-list2">
 			<div class="swiper-wrapper" style="width: 1300px; ">
 				<div class="swiper-slide">
 					<div class="index-list-cont">
-						<img class="index-list-t" src="image/index-list-t01.jpg"/>
-						<img src="image/index-list-i01.jpg"/>
+						<img class="index-list-t" src="/web/image/index-list-t01.jpg"/>
+						<img src="/web/image/index-list-i01.jpg"/>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="index-list-cont">
-						<img src="image/index-list-i02.jpg"/>
-						<img class="index-list-t" src="image/index-list-t02.jpg"/>
+						<img src="/web/image/index-list-i02.jpg"/>
+						<img class="index-list-t" src="/web/image/index-list-t02.jpg"/>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="index-list-cont">
-						<img class="index-list-t" src="image/index-list-t03.jpg"/>
-						<img src="image/index-list-i03.jpg"/>
+						<img class="index-list-t" src="/web/image/index-list-t03.jpg"/>
+						<img src="/web/image/index-list-i03.jpg"/>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="index-list-cont">
-						<img src="image/index-list-i04.jpg"/>
-						<img class="index-list-t" src="image/index-list-t04.jpg"/>
+						<img src="/web/image/index-list-i04.jpg"/>
+						<img class="index-list-t" src="/web/image/index-list-t04.jpg"/>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="index-list-cont">
-						<img class="index-list-t" src="image/index-list-t05.jpg"/>
-						<img src="image/index-list-i05.jpg"/>
+						<img class="index-list-t" src="/web/image/index-list-t05.jpg"/>
+						<img src="/web/image/index-list-i05.jpg"/>
 					</div>
 				</div>
 			</div>
@@ -134,9 +134,9 @@ use yii\helpers\Url; ?>
 	    <div class="index-list3">
 		    <div class="swiper-container swiper-list3">
 			    <div class="swiper-wrapper">
-				    <div class="swiper-slide"><img src="image/index-cplb01.jpg" alt="" /></div>
-				    <div class="swiper-slide"><img src="image/index-cplb02.jpg" alt="" /></div>
-				    <div class="swiper-slide"><img src="image/index-cplb03.jpg" alt="" /></div>
+				    <div class="swiper-slide"><img src="/web/image/index-cplb01.jpg" alt="" /></div>
+				    <div class="swiper-slide"><img src="/web/image/index-cplb02.jpg" alt="" /></div>
+				    <div class="swiper-slide"><img src="/web/image/index-cplb03.jpg" alt="" /></div>
 			    </div>
 			    <div class="swiper-button-next swiper-btnnext3"></div>
                 <div class="swiper-button-prev swiper-btnprev3"></div>
@@ -150,11 +150,11 @@ use yii\helpers\Url; ?>
 	<!--产品展示3开始-->
 	<div class="index-cpzs">
 		<div class="bx">
-			<img src="image/index-cp-title.png" />
+			<img src="/web/image/index-cp-title.png" />
 			<ul class="picList">
 				<li class="ind_pro_box_hover">
 					<div class="img_box">
-						<img src="image/index-cp-01.jpg"/>
+						<img src="/web/image/index-cp-01.jpg"/>
 					</div>
 					<div class="info">
 						<div class="title">美容洗护服务</div>
@@ -163,7 +163,7 @@ use yii\helpers\Url; ?>
 				</li>
 				<li class="ind_pro_box_hover">
 					<div class="img_box">
-						<img src="image/index-cp-02.jpg"/>
+						<img src="/web/image/index-cp-02.jpg"/>
 					</div>
 					<div class="info">
 						<div class="title">品质产品专卖</div>
@@ -172,7 +172,7 @@ use yii\helpers\Url; ?>
 				</li>
 				<li class="ind_pro_box_hover">
 					<div class="img_box">
-						<img src="image/index-cp-03.jpg"/>
+						<img src="/web/image/index-cp-03.jpg"/>
 					</div>
 					<div class="info">
 						<div class="title">会员定向纳客</div>
@@ -192,28 +192,28 @@ use yii\helpers\Url; ?>
     <footer>
         <div class="footer">
         	<div class="footer-x-bg wow fadeInDown animated">
-        		<img src="image/index-btm-tit.png" />
+        		<img src="/web/image/index-btm-tit.png" />
         	</div>
         	<ul>
         		<li>
-        			<img src="image/bottom-logo.png" />
+        			<img src="/web/image/bottom-logo.png" />
         		</li>
         		<li>
-        			<img src="image/bottom-ico-01.png" />
+        			<img src="/web/image/bottom-ico-01.png" />
         			<div>
         				<p>全国加盟热线</p>
         				<p> 400-851-3378</p>
         			</div>
         		</li>
         		<li>
-        			<img src="image/bottom-ico-02.png" />
+        			<img src="/web/image/bottom-ico-02.png" />
         			<div>
         				<h2>公司名称</h2>
         				<h2>广州大仓美容咨询有限公司</h2>
         			</div>
         		</li>
         		<li>
-        			<img src="image/bottom-ico-03.png" />
+        			<img src="/web/image/bottom-ico-03.png" />
         			<div>
         				<h2>总部地址</h2>
         				<h2>广州番禺区大石街河村村</br>工业二路5号1栋1层113-116单元</h2>

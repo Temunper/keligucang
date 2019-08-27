@@ -20,7 +20,7 @@ $fieldOptions2 = [
     'inputTemplate' => "{input}<span class='glyphicon glyphicon-lock form-control-feedback'></span>"
 ];
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 
 <div class="login-box">
     <div class="login-logo">

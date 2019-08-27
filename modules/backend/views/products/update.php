@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="products-update">
 
     <?= $this->render('_form', [

@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="user-view">
 
     <p>

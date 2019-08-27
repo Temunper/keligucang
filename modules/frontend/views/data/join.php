@@ -8,13 +8,13 @@ use yii\helpers\Url;
 	<head>
 		<meta charset="UTF-8" />
 		<title>颗粒归仓</title>
-		<link rel="stylesheet" type="text/css" href="css/base.css" />
-		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<link rel="stylesheet" href="css/animate.css" />
-		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-		<script type="text/javascript" src="js/swiper.min.js"></script>
-		<script type="text/javascript" src="js/wow.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="/web/css/base.css" />
+		<link rel="stylesheet" type="text/css" href="/web/css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="/web/css/index.css" />
+		<link rel="stylesheet" href="/web/css/animate.css" />
+		<script type="text/javascript" src="/web/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="/web/js/swiper.min.js"></script>
+		<script type="text/javascript" src="/web/js/wow.min.js"></script>
 		<script>
 			if(!(/msie [6|7|8|9]/i.test(navigator.userAgent))) {
 				new WOW().init();
@@ -28,7 +28,7 @@ use yii\helpers\Url;
     <header>
         <div class="header wrap clearfix">
             <div class="header-l fl">
-                <img src="image/logo.png" height="49" width="205" alt="" />
+                <img src="/web/image/logo.png" height="49" width="205" alt="" />
             </div>
             <div class="header-r fr">
                 <ul>
@@ -62,9 +62,9 @@ use yii\helpers\Url;
 	
     <!--banner开始-->
 	<div class="f-banner">
-		<img class="f-banner-bg" src="image/join-banner.jpg"/>
+		<img class="f-banner-bg" src="/web/image/join-banner.jpg"/>
 		<div class="bx">
-			<img class="f-banner-text f-join-text wow zoomIn animated" src="image/join-banner-text.png"/>
+			<img class="f-banner-text f-join-text wow zoomIn animated" src="/web/image/join-banner-text.png"/>
 		</div>
 	</div>
 	<!--banner结束-->
@@ -101,47 +101,47 @@ use yii\helpers\Url;
 					<ul>
 						<li class="wow fadeInUp animated" data-wow-delay="0.2s">
 							<h3>协助和评估选址</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部协助加盟商进行开店前的市场考察、店面评估选址、制定价格体系等，并提供可行性建议。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.3s">
 							<h3>区域代理支持</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>区域代理店商，享有后期新品系列直接代理权，可投放至化妆品、美容院、护肤品店渠道</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.4s">
 							<h3>品牌形象支持</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部提供全套品牌识别体系，以及产品形象画册、宣传单等规范化宣传物料，强化品牌辨识度。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.5s">
 							<h3>客户资源开发</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部拥有大量的客户资源，建立了庞大的客户网络，可以有效的帮助加盟商开放客户，打通渠道，快速实现成交。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.6s">
 							<h3>社会资源整合</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部依靠多年的经营，建立了牢固的社会关系，为加盟商提供资源整合的途径，多方共同发力，达成共赢。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.7s">
 							<h3>专家在线指导</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部一流营销专家全天24小时在线，时刻为加盟商解决经营过程遇到的问题，提供经营建议。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.8s">
 							<h3>区域保护支持</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>只要签约，就拥有区域独家代理权，真正无忧赚钱。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="0.9s">
 							<h3>媒体广告支持</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>总部将投入大量资金，全年线上线下广告的投放都会在各大网络平台向全国宣传，打造强势品牌。</p>
 						</li>
 						<li class="wow fadeInUp animated" data-wow-delay="1s">
 							<h3>活动促销支持</h3>
-							<img src="image/join-ico01.png"/>
+							<img src="/web/image/join-ico01.png"/>
 							<p>提供一站式开业活动营销方案以造势宣传快速将门店推出市场，实现快速盈利。</p>
 						</li>
 					</ul>
@@ -156,7 +156,7 @@ use yii\helpers\Url;
 				<div class="join-list3-cont">
 					<ul>
 						<li class="wow fadeInRight animated" data-wow-delay="0.2s">
-							<img src="image/join-lc01.jpg" />
+							<img src="/web/image/join-lc01.jpg" />
 							<div>
 								<p>合作咨询</p>
 								<span>了解行业前景</span>
@@ -165,7 +165,7 @@ use yii\helpers\Url;
 							</div>
 						</li>
 						<li class="wow fadeInLeft animated" data-wow-delay="0.3s">
-							<img src="image/join-lc02.jpg" />
+							<img src="/web/image/join-lc02.jpg" />
 							<div>
 								<p>申请加盟</p>
 								<span>确认开发的城市</span>
@@ -175,7 +175,7 @@ use yii\helpers\Url;
 							</div>
 						</li>
 						<li class="wow fadeInRight animated" data-wow-delay="0.4s">
-							<img src="image/join-lc03.jpg" />
+							<img src="/web/image/join-lc03.jpg" />
 							<div>
 								<p>签约</p>
 								<span>加盟申请资料审核</span>
@@ -185,7 +185,7 @@ use yii\helpers\Url;
 							</div>
 						</li>
 						<li class="wow fadeInLeft animated" data-wow-delay="0.5s">
-							<img src="image/join-lc04.jpg" />
+							<img src="/web/image/join-lc04.jpg" />
 							<div>
 								<p>市场开发</p>
 								<span>专业店铺评估</span>
@@ -195,7 +195,7 @@ use yii\helpers\Url;
 							</div>
 						</li>
 						<li class="wow fadeInRight animated" data-wow-delay="0.6s">
-							<img src="image/join-lc05.jpg" />
+							<img src="/web/image/join-lc05.jpg" />
 							<div>
 								<p>新店开业</p>
 								<span>门店装修方案/施工</span>
@@ -206,7 +206,7 @@ use yii\helpers\Url;
 							</div>
 						</li>
 						<li class="wow fadeInLeft animated" data-wow-delay="0.7s">
-							<img src="image/join-lc06.jpg" />
+							<img src="/web/image/join-lc06.jpg" />
 							<div>
 								<p>持续经营</p>
 								<span>门店日常管理</span>
@@ -228,28 +228,28 @@ use yii\helpers\Url;
     <footer>
         <div class="footer">
         	<div class="footer-x-bg wow fadeInDown animated">
-        		<img src="image/join-btm-tit.png" />
+        		<img src="/web/image/join-btm-tit.png" />
         	</div>
         	<ul>
         		<li>
-        			<img src="image/bottom-logo.png" />
+        			<img src="/web/image/bottom-logo.png" />
         		</li>
         		<li>
-        			<img src="image/bottom-ico-01.png" />
+        			<img src="/web/image/bottom-ico-01.png" />
         			<div>
         				<p>全国加盟热线</p>
         				<p> 400-851-3378</p>
         			</div>
         		</li>
         		<li>
-        			<img src="image/bottom-ico-02.png" />
+        			<img src="/web/image/bottom-ico-02.png" />
         			<div>
         				<h2>公司名称</h2>
         				<h2>广州大仓美容咨询有限公司</h2>
         			</div>
         		</li>
         		<li>
-        			<img src="image/bottom-ico-03.png" />
+        			<img src="/web/image/bottom-ico-03.png" />
         			<div>
         				<h2>总部地址</h2>
         				<h2>广州番禺区大石街河村村</br>工业二路5号1栋1层113-116单元</h2>

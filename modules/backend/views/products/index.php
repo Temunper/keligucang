@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = '产品管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="products-index">
 
     <p>

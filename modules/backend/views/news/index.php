@@ -12,7 +12,7 @@ use yii\helpers\Url;
 $this->title = 'News';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <div class="news-index">
 
     <p>

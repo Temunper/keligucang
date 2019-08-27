@@ -9,7 +9,7 @@ use yii\helpers\Html;
 $this->beginPage();
 $this->title = $name;
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
+<?=Html::jsFile('/web/js/jquery.js')?>
 <section class="content">
 
     <div class="error-page">
