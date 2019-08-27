@@ -8,11 +8,12 @@ return [
     'domain' => '/',
     'webuploader' => [
         // 后端处理图片的地址，value 是相对的地址
-        'uploadUrl' => 'news/upload',
+        'uploadUrl' => 'products/upload',
         // 多文件分隔符
         'delimiter' => ',',
         // 基本配置
         'baseConfig' => [
+            //默认图片
             'defaultImage' => 'http://img1.imgtn.bdimg.com/it/u=2056478505,162569476&fm=26&gp=0.jpg',
             'disableGlobalDnd' => true,
             'accept' => [
@@ -25,6 +26,6 @@ return [
             ],
         ],
     ],
-    'imageUploadRelativePath' => 'image/', // 图片默认上传的目录
-    'imageUploadSuccessPath' => 'image/', // 图片上传成功后，路径前缀
+    'imageUploadRelativePath' => 'image/', // upload图片默认上传的目录
+    'imageUploadSuccessPath' => 'image/', // upload图片上传成功后，路径前缀
 ];

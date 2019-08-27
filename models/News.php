@@ -42,9 +42,9 @@ class News extends \yii\db\ActiveRecord
     {
         $scenarios = parent::scenarios();
         $scenarios[self::SCENARIO_CREATE] = ['title', 'image', 'status', 'created_time',
-            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description','year'];
+            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description', 'year'];
         $scenarios[self::SCENARIO_UPDATE] = ['title', 'image', 'status', 'created_time',
-            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description','year'];
+            'updated_at', 'brief', 'content', 'author', 'source', 'keywords', 'description', 'year'];
         return $scenarios;
     }
 
@@ -86,10 +86,26 @@ class News extends \yii\db\ActiveRecord
             'source' => '来源',
             'keywords' => '关键词',
             'description' => '描述',
-            'year'=>'年份',
+            'year' => '年份',
             'created_time' => '创建时间',
             'updated_time' => '更新时间',
             'status' => 'Status',
         ];
     }
+
+    public function getStatus($status)
+    {
+        $status_arr = [
+            News::STATUS_ACTIVE => '未在使用',
+            News::STATUS_USING =>  '正在使用',
+            News::STATUS_DELETED =>  '已删除'
+        ];
+        if (array_key_exists($status, $status_arr)) {
+            return $status_arr[$this->status];
+        } else {
+            return ('未确认');
+        }
+    }
+
+
 }

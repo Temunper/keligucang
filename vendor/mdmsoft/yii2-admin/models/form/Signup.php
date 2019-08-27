@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 class Signup extends Model
 {
     public $username;
-    public $email;
+//    public $email;
     public $password;
     public $retypePassword;
 
@@ -29,10 +29,10 @@ class Signup extends Model
             ['username', 'unique', 'targetClass' => $class, 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
-            ['email', 'filter', 'filter' => 'trim'],
-            ['email', 'required'],
-            ['email', 'email'],
-            ['email', 'unique', 'targetClass' => $class, 'message' => 'This email address has already been taken.'],
+//            ['email', 'filter', 'filter' => 'trim'],
+//            ['email', 'required'],
+//            ['email', 'email'],
+//            ['email', 'unique', 'targetClass' => $class, 'message' => 'This email address has already been taken.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
