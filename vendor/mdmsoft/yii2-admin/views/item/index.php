@@ -19,7 +19,6 @@ $rules = array_keys(Configs::authManager()->getRules());
 $rules = array_combine($rules, $rules);
 unset($rules[RouteRule::RULE_NAME]);
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
 <div class="role-index">
     <h1><?= Html::encode($this->title) ?></h1>
     <p>

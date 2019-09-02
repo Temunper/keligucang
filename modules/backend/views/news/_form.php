@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
     <div class="form-group">
         <label for="ECalendar_date1" style="width: 100%">选择时间</label>
         <div class="calendarWarp">
-            <input type="text" name="year" class='ECalendar' id="ECalendar_date1" value="<?= $model->year?>"
+            <input type="text" name="write_at" class='ECalendar' id="ECalendar_date1" value="<?= $model->write_at?>"
                    placeholder="开始日期"/>
         </div>
     </div>

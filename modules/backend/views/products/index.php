@@ -10,7 +10,7 @@ use yii\grid\GridView;
 $this->title = '产品管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?= Html::jsFile('/js/jquery.js') ?>
 <div class="products-index">
 
     <p>
@@ -27,16 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'name',
-            'name_En',
-            'advantage_1',
-            'advantage_2',
-            //'advantage_3',
-            //'description_1',
-            //'description_2',
-            //'description_3',
-            //'image',
-            //'status',
-
+            'image',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return $model->status == 10 ? "正常使用" : "已删除";
+                },
+            ],
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

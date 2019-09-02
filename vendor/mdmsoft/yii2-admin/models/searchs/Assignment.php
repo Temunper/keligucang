@@ -4,7 +4,6 @@ namespace mdm\admin\models\searchs;
 
 use Yii;
 use yii\base\Model;
-use yii\caching\DummyCache;
 use yii\data\ActiveDataProvider;
 
 /**
@@ -49,7 +48,7 @@ class Assignment extends Model
      */
     public function search($params, $class, $usernameField)
     {
-        $query = $class::find()->where(['status'=>\mdm\admin\models\User::STATUS_ACTIVE]);
+        $query = $class::find();
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -58,8 +57,7 @@ class Assignment extends Model
             return $dataProvider;
         }
 
-        $query->andFilterWhere(['like', $usernameField, $this->username])
-              ->andFilterWhere(['=','status',\app\models\User::STATUS_ACTIVE]);
+        $query->andFilterWhere(['like', $usernameField, $this->username]);
 
         return $dataProvider;
     }

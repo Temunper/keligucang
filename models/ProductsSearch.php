@@ -18,7 +18,7 @@ class ProductsSearch extends Products
     {
         return [
             [['id', 'status'], 'integer'],
-            [['name', 'name_En', 'advantage_1', 'advantage_2', 'advantage_3', 'description_1', 'description_2', 'description_3', 'image'], 'safe'],
+            [['name', 'image'], 'safe'],
         ];
     }
 
@@ -63,13 +63,6 @@ class ProductsSearch extends Products
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'name_En', $this->name_En])
-            ->andFilterWhere(['like', 'advantage_1', $this->advantage_1])
-            ->andFilterWhere(['like', 'advantage_2', $this->advantage_2])
-            ->andFilterWhere(['like', 'advantage_3', $this->advantage_3])
-            ->andFilterWhere(['like', 'description_1', $this->description_1])
-            ->andFilterWhere(['like', 'description_2', $this->description_2])
-            ->andFilterWhere(['like', 'description_3', $this->description_3])
             ->andFilterWhere(['like', 'image', $this->image])
             ->andFilterWhere(['<>', 'status', Products::STATUS_DELETED]);
 

@@ -71,8 +71,9 @@ class NewsController extends Controller
         $model = new News();
         $model->scenario = 'create';
         if ($model->load(Yii::$app->request->post())) {
-            $model->created_time = date('Y-m-d h:i:s');
-            $model->updated_time = date('Y-m-d h:i:s');
+            $model->write_at = Yii::$app->request->post('write_at');
+            $model->created_at = date('Y-m-d h:i:s');
+            $model->updated_at = date('Y-m-d h:i:s');
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -95,9 +96,9 @@ class NewsController extends Controller
         $model->scenario = 'update';
         if ($model->load(Yii::$app->request->post())) {
 //            var_dump(Yii::$app->request->post());die;
-//            $model->year;die;
-            $model->year = Yii::$app->request->post('year');
-            $model->updated_time = date('Y-m-d h:i:s');
+//            $model->write_at;die;
+            $model->write_at = Yii::$app->request->post('write_at');
+            $model->updated_at = date('Y-m-d h:i:s');
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }

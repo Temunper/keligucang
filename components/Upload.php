@@ -1,10 +1,13 @@
 <?php
+
 namespace app\components;
+
 use Yii;
 use yii\base\Model;
 use yii\web\UploadedFile;
 use yii\base\Exception;
 use yii\helpers\FileHelper;
+
 /**
  * 文件上传处理
  */
@@ -12,7 +15,8 @@ class Upload extends Model
 {
     public $file;
     private $_appendRules;
-    public function init ()
+
+    public function init()
     {
         parent::init();
         $extensions = Yii::$app->params['webuploader']['baseConfig']['accept']['extensions'];
@@ -20,15 +24,17 @@ class Upload extends Model
             [['file'], 'file', 'extensions' => $extensions],
         ];
     }
+
     public function rules()
     {
         $baseRules = [];
         return array_merge($baseRules, $this->_appendRules);
     }
+
     /**
      *
      */
-    public function upImage ()
+    public function upImage()
     {
         $model = new static;
         $model->file = UploadedFile::getInstanceByName('file');
@@ -37,16 +43,17 @@ class Upload extends Model
         }
         $relativePath = $successPath = '';
         if ($model->validate()) {
-            $relativePath = Yii::$app->params['imageUploadRelativePath'];
-            $successPath = Yii::$app->params['imageUploadSuccessPath'];
+            $relativePath = Yii::$app->params['imageUploadRelativePath'] . date('Ymd') . '/';
+            $successPath = Yii::$app->params['imageUploadSuccessPath'] . date('Ymd') . '/';
             $fileName = $model->file->baseName . '.' . $model->file->extension;
             if (!is_dir($relativePath)) {
                 FileHelper::createDirectory($relativePath);
             }
+
             $model->file->saveAs($relativePath . $fileName);
             return [
                 'code' => 0,
-                'url' => Yii::$app->params['domain'].'/' . $fileName,
+                'url' => Yii::$app->params['domain'] . $successPath . $fileName,
                 'attachment' => $successPath . $fileName
             ];
         } else {

@@ -18,7 +18,7 @@ class NewsSearch extends News
     {
         return [
             [['id', 'status'], 'integer'],
-            [['title', 'image', 'brief', 'content', 'author', 'source', 'keywords', 'description', 'created_time', 'updated_time'], 'safe'],
+            [['title', 'image', 'brief', 'content', 'author', 'source', 'keywords', 'description', 'created_at', 'updated_at'], 'safe'],
         ];
     }
 
@@ -59,8 +59,8 @@ class NewsSearch extends News
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_time' => $this->created_time,
-            'updated_time' => $this->updated_time,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'status' => $this->status,
         ]);
 

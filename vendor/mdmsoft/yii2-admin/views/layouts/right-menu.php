@@ -13,7 +13,6 @@ foreach ($menus as $i => $menu) {
 }
 $this->params['nav-items'] = $menus;
 ?>
-<?=Html::jsFile('/js/jquery.js')?>
 <?php $this->beginContent($controller->module->mainLayout) ?>
 <div class="row">
     <div class="col-sm-9">

@@ -13,7 +13,7 @@ use yii\widgets\ActiveForm;
 $this->title = '添加新用户';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="site-signup">
     <div class="row">
         <div class="col-lg-5">

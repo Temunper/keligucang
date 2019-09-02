@@ -13,6 +13,7 @@ use yii\widgets\Pjax;
 $this->title = Yii::t('rbac-admin', 'Assignments');
 $this->params['breadcrumbs'][] = $this->title;
 
+
 $columns = [
     ['class' => 'yii\grid\SerialColumn'],
     $usernameField,
@@ -25,7 +26,7 @@ $columns[] = [
     'template' => '{view}'
 ];
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="assignment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

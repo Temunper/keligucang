@@ -41,7 +41,7 @@ use yii\helpers\Url;
                             <div align="center">
                                 <?= Html::a(
                                     '退出',
-                                    ['/backend/site/logout'],
+                                    ['/site/logout'],
                                     ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                                 ) ?>
                             </div>

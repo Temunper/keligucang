@@ -9,7 +9,7 @@ $this->title = '产品添加';
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="products-create">
 
     <?= $this->render('_form', [

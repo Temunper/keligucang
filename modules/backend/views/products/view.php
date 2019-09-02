@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?= Html::jsFile('/js/jquery.js') ?>
 <div class="products-view">
 
     <p>
@@ -30,16 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'name_En',
-            'advantage_1',
-            'advantage_2',
-            'advantage_3',
-            'description_1',
-            'description_2',
-            'description_3',
             'image',
-            'dt_image',
-            'status',
+            [
+                'label' => 'status',
+                'value' => function ($model) {
+                    return $model->status == 10 ? "正常使用" : "已删除";
+                }
+            ],
         ],
     ]) ?>
 

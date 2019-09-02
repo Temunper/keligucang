@@ -47,6 +47,8 @@ $controllerId = $this->context->uniqueId . '/';
         'model' => $model,
         'attributes' => [
             'username',
+            'email:email',
+            'created_at:date',
             'status',
         ],
     ])

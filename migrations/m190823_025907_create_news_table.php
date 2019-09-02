@@ -22,9 +22,9 @@ class m190823_025907_create_news_table extends Migration
             'source' => $this->string()->comment('来源'),
             'keywords' => $this->string()->comment('关键词'),
             'description' => $this->string()->comment('描述'),
-            'created_time' => $this->dateTime(),
-            'updated_time' => $this->dateTime(),
-            'year' => $this->integer(4),
+            'created_at' => $this->string(20),
+            'updated_at' => $this->string(20),
+            'write_at' => $this->string(20),
             'status' => $this->tinyInteger(4)
         ]);
     }

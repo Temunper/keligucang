@@ -16,9 +16,10 @@ $config = [
     'as access' => [
         'class' => 'mdm\admin\components\AccessControl',
         'allowActions' => [
-            "backend/site/login",
-            "site/*",
-            "frontend/*"
+//            "backend/site/login",
+//            "site/*",
+//            "frontend/*"
+            "*"
         ]
     ],
     'components' => [
@@ -29,7 +30,10 @@ $config = [
         //挑选皮肤
         'assetManager' => [
             'bundles' => [
-                'dmstr\web\AdminLteAsset' => [
+                'yii\web\JqueryAsset' => [    //禁用jq
+                    'js' => []
+                ],
+                'dmstr\web\AdminLteAsset' => [  //adminlte模板静态资源
                     'skin' => 'skin-red',
                 ],
             ],
@@ -48,7 +52,7 @@ $config = [
 //            'loginUrl' => '/backend/site/login'
         ],
         'errorHandler' => [
-            'errorAction' => '/backend/site/error',
+            'errorAction' => '/site/error',
 //            'layout'=>false
         ],
         'mailer' => [
@@ -77,7 +81,8 @@ $config = [
 
                 '/' => '/frontend/data/index',
                 '/backend' => 'backend/news/index',
-                '/newscontent/<id:\d+>'=>'/frontend/data/newscontent',
+                '/admin' => 'admin/assignment/index',
+                '/newscontent/<id:\d+>' => '/frontend/data/newscontent',
                 '/<action:\w+>' => '/frontend/data/<action>',
 
                 '/backend/<controller:\w+>/<action:\w+>' => '/backend/<controller>/<action>',
@@ -108,8 +113,8 @@ $config = [
         //富文本框模块
         'redactor' => [
             'class' => 'app\components\RedactorModule',
-            'uploadDir' => 'web/uploads',
-            'uploadUrl' => '/web/uploads',
+            'uploadDir' => 'uploads',
+            'uploadUrl' => '/uploads',
             'imageAllowExtensions' => ['jpg', 'png', 'gif']
         ],
     ],

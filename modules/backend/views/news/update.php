@@ -10,10 +10,10 @@ $this->params['breadcrumbs'][] = ['label' => 'News', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<?=Html::jsFile('/web/js/jquery-1.11.3.min.js')?>
-<?=Html::jsFile('/web/js/Ecalendar.jquery.min.js')?>
-<?=Html::jsFile('/web/js/iconfont.js')?>
-<?=Html::cssFile('/web/css/Ecalendar.css')?>
+<?=Html::jsFile('/js/jquery-1.11.3.min.js')?>
+<?=Html::jsFile('/js/Ecalendar.jquery.min.js')?>
+<?=Html::jsFile('/js/iconfont.js')?>
+<?=Html::cssFile('/css/Ecalendar.css')?>
 
 <div class="news-update">
 

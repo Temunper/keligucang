@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?= Html::jsFile('/js/jquery.js') ?>
 <div class="user-view">
 
     <p>
@@ -30,11 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'username',
-            'auth_key',
-            'password_hash',
+//            'auth_key',
+//            'password_hash',
             'created_at',
             'updated_at',
-//            'status'
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return $model->status == 10 ? "正常使用" : "禁用";
+                }
+            ]
         ],
     ]) ?>
 

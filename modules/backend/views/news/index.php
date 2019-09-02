@@ -12,7 +12,7 @@ use yii\helpers\Url;
 $this->title = 'News';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?=Html::jsFile('/web/js/jquery.js')?>
+<?=Html::jsFile('/js/jquery.js')?>
 <div class="news-index">
 
     <p>
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'content:ntext',
             'author',
             'source',
-            'year',
+            'write_at',
             //'keywords',
             //'description',
             //'created_time',
